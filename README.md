@@ -109,6 +109,18 @@ git clone https://github.com/kybxdc/Muu.t.git
 - **포트 충돌 주의**:  
   백엔드(`localhost:9090`)와 프론트엔드(`localhost:5173`)가 동일한 포트를 사용하지 않도록 설정되어 있습니다. 포트 충돌이 발생하면 수동으로 수정해야 합니다.
 
+- **Spring method parameters 주의**:
+  java.lang.IllegalArgumentException: Name for argument of type [java.lang.Long] not specified, and parameter name information not available via reflection. Ensure that the compiler uses the '-parameters' flag.
+  위의 IllegalArgumentException 오류 발생 시 STS의 컴파일러 설정이 잘못되었을 가능성이 있습니다.
+  이 경우, 아래의 사진처럼 Window > Preferences > Java > Compiler > Classfile Generation에서 "Store information about method parameters (usable via reflection)" 옵션을 체크해주면
+  컴파일 시 매개변수 이름 정보가 class 파일에 저장되도록 하여 오류가 해결될 것입니다.
+  ![Spring_preferences_check](docs/Spring_preferences_check.png)
+
+- **결제 방법**:
+  1. 카드등록
+  2. 비밀번호 등록(본 계정이라 다른거 ok)
+  3. 카드사 상관없이 선택
+  4. 카드 비밀번호, 카드번호, 등 전부 1로 채우기 (카드번호의 경우 자릿수는 지켜서)
 ---
 
 ## **프로젝트 자료**
